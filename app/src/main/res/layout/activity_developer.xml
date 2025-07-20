@@ -22,17 +22,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#EEEEEE"
-            app:title="">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Developer"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+            android:background="#6B7158"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Get to Know the Developers"
+            app:titleTextColor="#FFFFFF"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         </com.google.android.material.appbar.MaterialToolbar>
     </androidx.cardview.widget.CardView>
 

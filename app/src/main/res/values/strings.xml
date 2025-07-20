@@ -5,6 +5,9 @@
     <string name="welcome_user">Welcome, %1$s!</string>
     <string name="add_new_entry">Add new entry</string>
 
+    <!-- Profile -->
+    <string name="profile_picture">Profile picture</string>
+    
     <!-- Create Activity Strings -->
     <string name="back">Back</string>
     <string name="save">Save</string>

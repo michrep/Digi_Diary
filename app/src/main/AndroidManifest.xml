@@ -17,8 +17,10 @@
             android:name=".ForgotPass"
             android:exported="false" />
         <activity
-            android:name=".Profile"
-            android:exported="false" />
+            android:name="com.example.digi_diary.Profile"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Developer"
             android:exported="false" />

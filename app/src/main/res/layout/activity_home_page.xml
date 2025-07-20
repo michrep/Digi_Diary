@@ -78,19 +78,29 @@
             app:tint="#6B7158" />
 
         <!-- Right Navigation Button -->
-        <ImageView
-            android:id="@+id/nav_profile"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <FrameLayout
+            android:id="@+id/profile_button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:background="@drawable/nav_item_background"
-            android:padding="12dp"
-            android:scaleType="center"
-            android:src="@drawable/ic_profile"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="#6B7158" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/nav_profile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/nav_item_background"
+                android:clickable="true"
+                android:padding="12dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_profile"
+                app:tint="#6B7158" />
+        </FrameLayout>
 
         <!-- Centered FAB with exact padding -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -131,9 +141,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Debug: Show Users"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="100dp"
         app:backgroundTint="#FF0000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
