@@ -1,10 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout 
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForgotPass">
+    android:background="#EEEEEE"
+    android:padding="24dp"
+    tools:context=".ForgotPassActivity">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back_button"
+        android:padding="12dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Reset Password"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Enter your current and new password"
+        android:textColor="#757575"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+    <!-- Current Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/currentPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edittext_background_selector"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:hint="Current Password"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#006B7158"
+        app:boxStrokeWidth="0dp"
+        app:endIconDrawable="@drawable/ic_lock"
+        app:endIconMode="custom"
+        app:endIconTint="#6B7158"
+        app:hintTextAppearance="@style/BoldHintText"
+        app:hintTextColor="@color/floating_label_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitleText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/currentPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textColor="@color/text_color_selector"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- New Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background_selector"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:hint="New Password"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeColor="#6B7158"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_visibility_off"
+        app:endIconTint="#6B7158"
+        app:endIconContentDescription="Toggle password visibility"
+        app:passwordToggleEnabled="false"
+        app:hintTextColor="@color/floating_label_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentPasswordLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/text_color_selector"
+            android:textColorHint="#757575"
+            android:imeOptions="actionNext" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Confirm New Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background_selector"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:hint="Confirm New Password"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeColor="#6B7158"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_visibility_off"
+        app:endIconTint="#6B7158"
+        app:endIconContentDescription="Toggle password visibility"
+        app:passwordToggleEnabled="false"
+        app:hintTextColor="@color/floating_label_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newPasswordLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/text_color_selector"
+            android:textColorHint="#757575"
+            android:imeOptions="actionDone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Update Password Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/updatePasswordButton"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#6B7158"
+        android:text="Update Password"
+        android:textAllCaps="false"
+        android:textColor="#D9D9D9"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmPasswordLayout"
+        app:rippleColor="#8B8B8B"
+        app:strokeColor="#E6E6E6"
+        app:strokeWidth="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
